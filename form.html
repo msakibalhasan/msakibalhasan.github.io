@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contact Form | M. Sakib Al Hasan</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="assets/favicon.svg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION BAR
+         ========================= -->
+
+    
+<header class="nav-wrapper">
+    <nav class="navbar glass container">
+        <a href="index.html" class="logo-link" aria-label="M. Sakib Al Hasan Home">
+            <img src="assets/logo.svg" alt="Sakib Logo" class="logo-image">
+            <div>
+                <div class="logo-name">M. Sakib <span>Al Hasan</span></div>
+                <span class="logo-role">Web Developer</span>
+            </div>
+        </a>
+
+        <div class="nav-links">
+
+                <a href="index.html" class="">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="about.html" class="">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About</span>
+                </a>
+
+                <a href="skills.html" class="">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Skills</span>
+                </a>
+
+                <a href="photos.html" class="">
+                    <i class="fa-solid fa-images"></i>
+                    <span>Photos</span>
+                </a>
+
+                <a href="videos.html" class="">
+                    <i class="fa-solid fa-play"></i>
+                    <span>Videos</span>
+                </a>
+
+                <a href="contact.html" class="">
+                    <i class="fa-solid fa-address-card"></i>
+                    <span>Contact</span>
+                </a>
+
+                <a href="form.html" class="active">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Form</span>
+                </a>
+
+        </div>
+
+        <div class="nav-actions">
+            <a href="https://facebook.com/" target="_blank" rel="noopener" class="nav-action" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener" class="nav-action" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/" target="_blank" rel="noopener" class="nav-action" aria-label="Twitter / X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="mailto:your-email@example.com" class="nav-action nav-email" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+
+        <button class="menu-button" aria-label="Open navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+
+
+    <!-- =========================
+         PAGE CONTENT
+         ========================= -->
+
+    <main>
+
+        <div class="container">
+
+            
+<section class="page-header">
+
+    <span class="section-kicker">
+        06 / SEND A MESSAGE
+    </span>
+
+    <h1>
+        Contact <span class="blue-text">Form</span>
+    </h1>
+
+    <p>
+        Visitors can use this form to contact you.
+        Connect it later with your own backend or form service.
+    </p>
+
+</section>
+
+
+<form
+    class="form-card glass"
+    action="#"
+    method="post"
+>
+
+    <div class="form-grid">
+
+
+        <div class="form-field">
+
+            <label>
+                YOUR NAME
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-field">
+
+            <label>
+                EMAIL ADDRESS
+            </label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-field">
+
+            <label>
+                SUBJECT
+            </label>
+
+            <input
+                type="text"
+                name="subject"
+                placeholder="What is this about?"
+            >
+
+        </div>
+
+
+        <div class="form-field">
+
+            <label>
+                REASON
+            </label>
+
+            <select name="reason">
+
+                <option>
+                    General Inquiry
+                </option>
+
+                <option>
+                    Web Development
+                </option>
+
+                <option>
+                    Collaboration
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-field full">
+
+            <label>
+                MESSAGE
+            </label>
+
+            <textarea
+                name="message"
+                placeholder="Write your message..."
+                required
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-field full">
+
+            <button
+                type="submit"
+                class="button button-primary"
+            >
+
+                <i class="fa-regular fa-paper-plane"></i>
+
+                Send Message
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</form>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer class="footer">
+    <div class="container footer-inner">
+        <span>© 2026 M. Sakib Al Hasan</span>
+        <span>Built with <span class="blue-text">code</span> • glass • creativity</span>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
