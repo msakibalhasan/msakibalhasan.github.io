@@ -1778,6 +1778,7 @@ main {
     }
 
     .nav-links {
+        z-index: 1000;
         display: none;
 
         position: absolute;
@@ -1815,6 +1816,8 @@ main {
     }
 
     .menu-button {
+        position: relative;
+        z-index: 1001;
         display: inline-grid;
         place-items: center;
     }
