@@ -5,18 +5,37 @@
 
 /* ---------- Mobile navigation ---------- */
 
-const menuButton = document.querySelector(".menu-button");
-const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (menuButton && navLinks) {
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector(".nav-links");
 
-    menuButton.addEventListener("click", function () {
+    if (!menuButton || !navLinks) {
+        return;
+    }
 
-        navLinks.classList.toggle("show");
+    menuButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
 
+        const isOpen = navLinks.classList.toggle("show");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
     });
 
-}
+    navLinks.querySelectorAll("a").forEach(function (item) {
+        item.addEventListener("click", function () {
+            navLinks.classList.remove("show");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation");
+        });
+    });
+
+});
 
 
 /* ---------- Reusable typing effect ---------- */
@@ -205,24 +224,6 @@ if (revealItems.length) {
     revealItems.forEach(function (item) {
 
         revealObserver.observe(item);
-
-    });
-}
-
-
-/* ---------- Close mobile menu after navigation ---------- */
-
-if (navLinks) {
-
-    const navItems = navLinks.querySelectorAll("a");
-
-    navItems.forEach(function (item) {
-
-        item.addEventListener("click", function () {
-
-            navLinks.classList.remove("show");
-
-        });
 
     });
 }
