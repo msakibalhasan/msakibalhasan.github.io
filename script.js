@@ -5,36 +5,41 @@
 
 /* ---------- Mobile navigation ---------- */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("click", function (event) {
 
-    const menuButton = document.querySelector(".menu-button");
-    const navLinks = document.querySelector(".nav-links");
+    const menuButton = event.target.closest(".menu-button");
 
-    if (!menuButton || !navLinks) {
+    if (menuButton) {
+        event.preventDefault();
+
+        const navbar = menuButton.closest(".navbar");
+        const navLinks = navbar ? navbar.querySelector(".nav-links") : null;
+
+        if (navLinks) {
+            const isOpen = navLinks.classList.toggle("show");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+        }
+
         return;
     }
 
-    menuButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
+    const navItem = event.target.closest(".nav-links a");
 
-        const isOpen = navLinks.classList.toggle("show");
+    if (navItem) {
+        const navbar = navItem.closest(".navbar");
+        const navLinks = navbar ? navbar.querySelector(".nav-links") : null;
+        const button = navbar ? navbar.querySelector(".menu-button") : null;
 
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation" : "Open navigation"
-        );
-    });
-
-    navLinks.querySelectorAll("a").forEach(function (item) {
-        item.addEventListener("click", function () {
-            navLinks.classList.remove("show");
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation");
-        });
-    });
-
+        if (navLinks) navLinks.classList.remove("show");
+        if (button) {
+            button.setAttribute("aria-expanded", "false");
+            button.setAttribute("aria-label", "Open navigation");
+        }
+    }
 });
 
 
